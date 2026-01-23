@@ -1,2 +1,2 @@
 # schrodingerbox
-Website to fins educacional contente.
+Website to fins educacional content.
