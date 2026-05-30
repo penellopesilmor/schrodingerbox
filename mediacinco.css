@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calculadora de Média Escolar</title>     
+  <link href="mediacinco.css" rel="stylesheet">  
+</head>
+<body>
+
+  <div class="container">
+    <h1>Calculadora de Média escolar</h1>
+
+    <div class="notas-container" id="notasContainer">
+      <!-- As notas serão adicionadas aqui -->
+      <!-- Assim que se "anota" em html -->
+    </div>
+
+    <button class="btn btn-add" onclick="adicionarNota()">+ Adicionar nota</button>
+
+    <button class="btn btn-calcular" onclick="calcularMedia()">Calcular Média Trimestral</button>
+
+    <div id="resultado"></div>
+  </div>
+
+  <script>
+    // Inicia com 2 campos de nota obrigatórios
+    window.onload = function() {
+      adicionarNota();
+      adicionarNota();
+    };
+
+    function adicionarNota() {
+      const container = document.getElementById('notasContainer');
+      
+      const div = document.createElement('div');
+      div.className = 'nota-field';
+
+      const input = document.createElement('input');
+      input.type = 'number';
+      input.placeholder = 'Digite a nota';
+      input.step = '0.1';
+      input.min = '0';
+      input.max = '10';
+      input.required = true;
+// tipo de entrada das notas 
+      const btnRemove = document.createElement('button');
+      btnRemove.className = 'btn-remove';
+      btnRemove.textContent = '×';
+      btnRemove.type = 'button';
+      btnRemove.onclick = function() {
+        div.remove();
+      };
+// exclui o botão
+
+      div.appendChild(input);
+      div.appendChild(btnRemove);
+      container.appendChild(div);
+    }
+// fórmula da média aritmética 
+    function calcularMedia() {
+      const inputs = document.querySelectorAll('#notasContainer input');
+      let soma = 0;
+      let quantidade = 0;
+
+      inputs.forEach(input => {
+        const valor = parseFloat(input.value);
+        if (!isNaN(valor)) {
+          soma += valor;
+          quantidade++;
+        }
+      });
+
+      const resultadoDiv = document.getElementById('resultado');
+
+      if (quantidade === 0) {
+        resultadoDiv.innerHTML = "Insira pelo menos uma nota válida.";
+        resultadoDiv.className = "";
+        return;
+      }
+
+      const media = soma / quantidade;
+      const mediaFormatada = media.toFixed(2);
+
+      let status = "";
+      let classe = "";
+
+      
+ if (media >= 5) {
+        status = "Aprovado";
+        classe = "aprovado";
+      } else if (media >= 4) {
+        status = "Recuperação";
+        classe = "mediano";
+      } else {
+        status = "Recupere com urgência";
+        classe = "reprovado";
+     
+      }
+
+      resultadoDiv.innerHTML = `Média: <strong>${mediaFormatada}</strong><br>${status}`;
+      resultadoDiv.className = classe;
+    }
+  </script>
+
+</body>
+</html>
