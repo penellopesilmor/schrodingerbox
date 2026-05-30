@@ -1,0 +1,53 @@
+body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: lightyellow;
+      display: flex;
+      justify-content: center;
+      padding: 30px; 
+      min-height: 100vh;
+      margin: 0;
+}
+.divisor{
+      background: pink;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 500px;
+}
+    h1 {
+      text-align: center;
+      color: deeppink;
+      margin-bottom: 25px;
+    }
+
+h3{
+  text-align: center;
+}
+   button{
+      background-color: hotpink;
+      color: white;
+      width: 100%;
+      padding: 14px;
+      font-size: 17px;
+      margin-top: 20px;
+      border-radius: 20px:
+   }   
+
+ .seis:hover {
+      background-color: lightcyan;
+ }
+ .sete:hover {
+      background-color: lightcyan;
+ }
+.cinco: hover{
+  background-color: ligthcyan;
+}
+.cinco{
+  border-radius: 20px;
+}
+.seis{
+  border-radius: 20px;
+}
+.sete{
+  border-radius: 20px;
