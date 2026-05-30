@@ -1,0 +1,113 @@
+ body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: lightyellow;
+      display: flex;
+      justify-content: center;
+      padding: 30px; 
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: pink;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    h1 {
+      text-align: center;
+      color: deeppink;
+      margin-bottom: 25px;
+    }
+
+    .notas-container {
+      margin-bottom: 20px;
+    }
+
+    .nota-field {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      gap: 10px;
+    }
+
+    .nota-field input {
+      flex: 1;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      outline: none;
+    }
+
+    .nota-field input:focus {
+      border-color: #3498db;
+      box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    }
+
+    .btn-remove {
+      background-color: #e74c3c;
+      color: white;
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .btn-remove:hover {
+      background-color: #c0392b;
+    }
+
+    .btn {
+      padding: 10px 16px;
+      font-size: 15px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-add {
+      background-color: hotpink;
+      color: white;
+    }
+
+    .btn-add:hover {
+      background-color: #27ae60;
+    }
+
+    .btn-calcular {
+      background-color: hotpink;
+      color: white;
+      width: 100%;
+      padding: 14px;
+      font-size: 17px;
+      margin-top: 20px;
+    }
+
+    .btn-calcular:hover {
+      background-color: #2980b9;
+    }
+
+    #resultado {
+      margin-top: 25px;
+      padding: 20px;
+      background-color: lightcyan;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 1.3em;
+      font-weight: bold;
+    }
+
+    .aprovado { color: #27ae60; }
+    .reprovado { color: #e74c3c; }
+    .mediano {color: orange; }
